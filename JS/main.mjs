@@ -1,15 +1,12 @@
 import { MinnaTransClass } from './minnaTransClass.js';
-import * as dotenv from 'dotenv'
-dotenv.config()
 
 
-let exercise_key = process.env.exercise_key;
-let trans_key = process.env.trans_api_key;
-let trans_secret = process.env.trans_api_secret;
-let trans_name = process.env.trans_login_id;
+let exercise_key = "KkHBDdhaF0sYyFSVba2FGQ==RXU731Fltx4dcRhc";
+let trans_key = "754f99bb94f2d89520b659a85bbf74ef0666da4cb";
+let trans_secret = "ec7afb168fbc69055c37e1a28e16448b";
+let trans_name = "harusame777";
 
 const minnaTrans = new MinnaTransClass(trans_key, trans_secret, trans_name);
-
 
 
 
@@ -26,8 +23,6 @@ const response = await fetch('https://api.api-ninjas.com/v1/exercises?' + query_
 });
 
 const data = await response.json();
-
-console.log(data);
 
 
 const resource = data[0]["instructions"];
