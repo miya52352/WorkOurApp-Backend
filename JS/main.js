@@ -48,7 +48,7 @@ async function getDeepLText(input_text) {
 };
 
 
-
+// HTMLで色々いじる場所
 window.addEventListener("DOMContentLoaded", (event) => {
   let myButton = document.getElementById("myButton");
   let result = document.getElementById("result");
