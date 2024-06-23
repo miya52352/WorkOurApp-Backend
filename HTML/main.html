@@ -5,8 +5,21 @@
     <meta charset="UTF-8" />
 </head>
 <body>
+    <form id=" exercise-type-form">
+        <label for=" exercise-type">トレーニングタイプ:</label>
+        <select id="exercise-type" name="exercise-type">
+            <option value="cardio">Cardio</option>
+            <option value="olympic_weightlifting">Olympic Weightlifting</option>
+            <option value="plyometrics">Plyometrics</option>
+            <option value="powerlifting">Powerlifting</option>
+            <option value="strength">Strength</option>
+            <option value="stretching">Stretching</option>
+            <option value="strongman">Strongman</option>
+        </select>
+    </form>
+
     <form id="muscle-form">
-        <label for="muscle-groups">Choose a muscle group:</label>
+        <label for="muscle-groups">鍛えたい部位:</label>
         <select id="muscle-groups" name="muscle-groups">
             <option value="abdominals">abdominals</option>
             <option value="abductors">abductors</option>
@@ -25,9 +38,22 @@
             <option value="traps">traps</option>
             <option value="triceps">triceps</option>
         </select>
-        <br><br>
-        <button id="myButton" type="button">Submit</button>
     </form>
+
+    
+    <form id="exercise-type-form">
+        <label for="level">レベル:</label>
+        <select id="level" name="level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+        </select>
+    </form>
+
+    <br><br>
+    <button id="myButton" type="button">Submit</button>
+
+
 
     <p id="result">結果</p>
     <p id="translation_result">翻訳後</p>

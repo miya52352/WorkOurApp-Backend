@@ -53,17 +53,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
       translation_result.textContent=""
       const params = { // 渡したいパラメータをJSON形式で書く
         muscle: document.getElementById("muscle-groups").value,
+        type:document.getElementById("exercise-type").value,
+        difficulty:document.getElementById("level").value,
       };
 
       console.log(params);
     
       // Exercise API
       let exercises =  await getExerciseMenus(params);
-      result.textContent = exercises[0]["instructions"];
 
+      if(exercises.length>0){
+      result.textContent = exercises[0]["instructions"];
+      console.log(exercises[0])
       // DeepL API
       let deepl = await getDeepLText(exercises[0]["instructions"]);
       translation_result.textContent = deepl["translations"][0]["text"];
+      }
+      else{
+        result.textContent="該当するトレーニングは存在しません。別のトレーニングタイプ・鍛えたい部位・レベルを選択してください"
+      }
     });
+    
   }
 });
