@@ -46,6 +46,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let result = document.getElementById("result");
   let translation_result = document.getElementById("translation_result");
 
+
   if (myButton) {
     myButton.addEventListener("click", async function() {
       result.textContent=""
@@ -53,6 +54,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const params = { // 渡したいパラメータをJSON形式で書く
         muscle: document.getElementById("muscle-groups").value,
       };
+
+      console.log(params);
     
       // Exercise API
       let exercises =  await getExerciseMenus(params);
