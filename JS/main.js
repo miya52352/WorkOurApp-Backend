@@ -1,4 +1,3 @@
-
 const EXERCISE_KEY = "KkHBDdhaF0sYyFSVba2FGQ==RXU731Fltx4dcRhc";
 const EXERCISE_URL = "https://api.api-ninjas.com/v1/exercises";
 
@@ -6,16 +5,9 @@ const DEEPL_KEY = "2c972989-c128-48cf-a45e-07bd7b8ac875:fx";
 const DEEPL_URL = 'https://api-free.deepl.com/v2/translate';
 
 
-
-
-
-// Exercise API
-const params = { // 渡したいパラメータをJSON形式で書く
-  muscle: "biceps",
-};
-
 async function getExerciseMenus(params) {
   const query_params = new URLSearchParams(params); 
+  console.log(`${EXERCISE_URL}?` + query_params)
   
     let response = await fetch(`${EXERCISE_URL}?` + query_params, {
       headers: {
@@ -56,6 +48,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   if (myButton) {
     myButton.addEventListener("click", async function() {
+      result.textContent=""
+      translation_result.textContent=""
+      const params = { // 渡したいパラメータをJSON形式で書く
+        muscle: document.getElementById("muscle-groups").value,
+      };
+    
       // Exercise API
       let exercises =  await getExerciseMenus(params);
       result.textContent = exercises[0]["instructions"];
